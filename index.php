@@ -4,10 +4,8 @@
 
 <?
 
-
 $Pandora  =  $_POST["Pandora"];
 $Speakers = $_POST["Speakers"];
-
 
 if ($Pandora == "PandoraON")
 	{
@@ -15,36 +13,40 @@ if ($Pandora == "PandoraON")
 		$colorOFF = "";
 	}
 
-if ($Pandora == "PandoraOFF")
+elseif ($Pandora == "PandoraOFF")
         {
                 $colorON = "";
                 $colorOFF = "red";
         }
 
+if ($Speakers == "Front")
+        {
+                $colorSpeakerFront = "green";
+                $colorSpeakerBack = "";
+        }
 
+elseif ($Speakers == "Back")
+        {
+                $colorSpeakerBack = "green";
+                $colorSpeakerFront = "";
+        }
 
-
-	
 ?>
 
 
 <form action= "index.php" method="post">
-  Pandora Radio:</br>
-  <button name="Pandora" style="width:100px;font-size:13pt;padding:2px; border:3px; background-color:<?echo $colorON; ?>" type="submit" value="PandoraON">ON</button>
+  <h2>Pandora Radio:</h2>
+  <button name="Pandora" style="width:100px;font-size:13pt;padding:2px; border:3px; background-color:<?echo $colorON; ?>" type="submit" value= "PandoraON">ON</button>
   <button name="Pandora" style="width:100px;font-size:13pt;padding:2px; border:3px; background-color:<?echo $colorOFF; ?>" type="submit" value="PandoraOFF">OFF</button>
-  </br></br>Choose speakers:</br>
-  <button name="Speakers" type="submit" value="Front">FRONT</button>
-  <button name="Speakers" type="submit" value="Back">BACK</button>
-
-
-<input type="hidden" name="country" value=<?echo $variable; ?>>
-
-
-
-
+ <input type = "hidden" name="Speakers" value="<?php echo $Speakers; ?>">
 </form>
 
-
+<form action= "index.php" method="post">
+ </br><br><h2>Choose speakers:</h2>
+ <button name="Speakers" type="submit" style="width:100px;font-size:13pt;padding:2px; border:3px; background-color:<?echo $colorSpeakerFront; ?>" value="Front">FRONT</button>
+ <button name="Speakers" type="submit" style="width:100px;font-size:13pt;padding:2px; border:3px; background-color:<?echo $colorSpeakerBack; ?>" value="Back">BACK</button>
+ <input type = "hidden" name="Pandora" value="<?php echo $Pandora; ?>">
+</form>
 
 </body></html>
 
