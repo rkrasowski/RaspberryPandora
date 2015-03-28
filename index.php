@@ -3,16 +3,36 @@
 <h1>Pandora radio controller</h1>
 
 <?
-$variable = "test";
 
+
+$Pandora  =  $_POST["Pandora"];
+$Speakers = $_POST["Speakers"];
+
+
+if ($Pandora == "PandoraON")
+	{
+		$colorON = "green";
+		$colorOFF = "";
+	}
+
+if ($Pandora == "PandoraOFF")
+        {
+                $colorON = "";
+                $colorOFF = "red";
+        }
+
+
+
+
+	
 ?>
 
 
-<form action="processform.php" method="post">
-  Pandora Radio:
-  <button name="Pandora" type="submit" value="PandoraON">ON</button>
-  <button name="Pandora" type="submit" value="PandoraOFF">OFF</button>
-  Choose speakers:
+<form action= "index.php" method="post">
+  Pandora Radio:</br>
+  <button name="Pandora" style="width:100px;font-size:13pt;padding:2px; border:3px; background-color:<?echo $colorON; ?>" type="submit" value="PandoraON">ON</button>
+  <button name="Pandora" style="width:100px;font-size:13pt;padding:2px; border:3px; background-color:<?echo $colorOFF; ?>" type="submit" value="PandoraOFF">OFF</button>
+  </br></br>Choose speakers:</br>
   <button name="Speakers" type="submit" value="Front">FRONT</button>
   <button name="Speakers" type="submit" value="Back">BACK</button>
 
