@@ -7,23 +7,6 @@
 $Pandora  =  $_POST["Pandora"];
 $Speakers = $_POST["Speakers"];
 
-
-$IsPandoraOn =  exec('pgrep pianobar');
-
-
-if ($IsPandoraOn == "")
-        {
-                $Pandora = "PandoraOFF";
-        }
-else
-        {
-                $Pandora = "PandoraON";
-
-        }
-
-
-
-
 if ($Pandora == "PandoraON")
 	{
 		$colorON = "green";
