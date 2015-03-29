@@ -7,10 +7,15 @@
 $Pandora  =  $_POST["Pandora"];
 $Speakers = $_POST["Speakers"];
 
+
+
+
+
 if ($Pandora == "PandoraON")
 	{
 		$colorON = "green";
 		$colorOFF = "";
+		
 	}
 
 elseif ($Pandora == "PandoraOFF")
@@ -29,12 +34,14 @@ if ($Speakers == "Front")
         {
                 $colorSpeakerFront = "green";
                 $colorSpeakerBack = "";
+		 system('/home/pi/perl/frontON.pl');
         }
 
 elseif ($Speakers == "Back")
         {
                 $colorSpeakerBack = "green";
                 $colorSpeakerFront = "";
+		system('/home/pi/perl/backON.pl');
         }
 
 ?>
